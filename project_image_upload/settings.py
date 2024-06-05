@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 from datetime import timedelta
 
@@ -29,7 +29,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -69,7 +70,6 @@ CORS_ALLOW_METHODS = [
 CORS_ALLOW_HEADERS = [
     'Content-Type',
     'Authorization',
-    'authentication',
 ]
 
 REST_FRAMEWORK = {
